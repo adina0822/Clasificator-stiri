@@ -1,0 +1,12 @@
+UI - Ichim Teodora - 9.01.2020
+Procesare input - Livint Lucian - 10.01.2020
+Reprezentare vectoriala a textelor - Mariuta Silviu - 11.01.2020
+Clasificator - Logistic Regression - Ciubotaru Adina - 12.01.2020
+Clasificator - RNN - Badita George - 12.01.2020
+Clasificator - CNN - Ichim Teodora - 12.01.2020
+Clasificare stiri - Mariuta Silviu - 12.01.2020
+Procesare output - Livint Lucian - 14.01.2020
+Integrare - Ciubotaru Adina - 15.01.2020
+Refactoring - Badita George - 16.01.2020
+
+
