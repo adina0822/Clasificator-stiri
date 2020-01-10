@@ -1,6 +1,6 @@
-export class Article{
-    title:string;
-    id:number;
-    body:string;
-    categories:string[];
+export interface Article {
+    id: number;
+    title: string;
+    body: string;
+    categories: string[];
 }

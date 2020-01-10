@@ -1,0 +1,53 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Clasificator Stiri</a>
+    
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item dropdown open" >
+            <a class="nav-link dropdown-toggle" style="cursor: pointer;" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Categories
+            </a>
+            <div class="dropdown-menu"  aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" (click)="onCategoryClicked('All')">All</a>
+              <a class="dropdown-item" (click)="onCategoryClicked('Tech')">Tech</a>
+              <a class="dropdown-item" (click)="onCategoryClicked('Culture')">Culture</a>
+              <a class="dropdown-item" (click)="onCategoryClicked('Finance')">Finance</a>
+              <a class="dropdown-item" (click)="onCategoryClicked('Politics')">Politics</a>
+              <a class="dropdown-item" (click)="onCategoryClicked('Science')">Science</a>
+              <a class="dropdown-item" (click)="onCategoryClicked('Sport')">Sport</a>
+            </div>
+          </li>
+      </ul>
+      <form class="form-inline">
+        <button class="btn btn-outline-info" data-toggle="modal" data-target="#Modal" type="button">Add article</button>
+      </form>
+    </div>
+  </nav>
+  <!-- Modal -->
+  <div class="modal fade " id="Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalCenterTitle">New Article</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form>
+                <div class="form-group">
+                  <label for="validationDefault01" class="col-form-label">Title:</label>
+                  <input type="text" class="form-control" id="recipient-name" required>
+                </div>
+                <div class="form-group">
+                  <label for="message-text" class="col-form-label">Body:</label>
+                  <textarea class="form-control large" id="message-text" required></textarea>
+                </div>
+                <button type="button" class="btn btn-dark center" type="submit">Add Article</button>
+                
+            </form>
+        </div>
+        
+      </div>
+    </div>
+  </div>
