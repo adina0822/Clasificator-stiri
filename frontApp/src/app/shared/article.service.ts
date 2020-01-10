@@ -2,7 +2,9 @@ import { Article } from './article.model';
 import { EventEmitter } from '@angular/core';
 
 export class ArticleService {
-  categoryChanged = new EventEmitter<Article[]>();
+  listChanged = new EventEmitter<Article[]>();
+  categoryChanged = new EventEmitter<string>();
+  
 
   articlesList: Article[] = [
     {
@@ -20,7 +22,7 @@ export class ArticleService {
 
   ];
   private displayedArticles:Article[]=this.articlesList;
-  selectedCategory:string;
+  selectedCategory:string='All';
   constructor() { }
 
   getArtciles(){
@@ -28,16 +30,21 @@ export class ArticleService {
   }
 
   setCategory(category:string) {
-    
+    this.selectedCategory=category;
     this.displayedArticles=[];
     if(category==='All') this.displayedArticles=this.articlesList
     else{
-      this.selectedCategory=category;
+      
       for (let article of this.articlesList) {
         if (article.categories.includes(category))
         this.displayedArticles.push(article);
     }
     }
     
+  }
+
+  addArticle(article:Article){
+    this.articlesList.push(article);
+    this.setCategory(this.selectedCategory);
   }
 }

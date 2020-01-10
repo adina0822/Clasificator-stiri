@@ -9,6 +9,7 @@ import { ArticleService } from '../shared/article.service';
 })
 export class ArticleListComponent implements OnInit {
   articleList:Article[];
+  selectedCategory:string;
   images: any= {
       Tech:"././assets/tech.jpg",
       Politics:"././assets/politics.jpg",
@@ -22,8 +23,12 @@ export class ArticleListComponent implements OnInit {
 
   ngOnInit() {
       this.articleList=this.articleService.getArtciles();
-      this.articleService.categoryChanged.subscribe(
+      this.selectedCategory=this.articleService.selectedCategory;
+      this.articleService.listChanged.subscribe(
         (articles:Article[]) => {this.articleList=articles}
+      )
+      this.articleService.categoryChanged.subscribe(
+        (category:string) => {this.selectedCategory=category}
       )
   }
   
