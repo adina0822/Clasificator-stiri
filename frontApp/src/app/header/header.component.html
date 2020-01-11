@@ -1,9 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="#">Clasificator Stiri</a>
-    
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item dropdown open" >
+        <li class="nav-item dropdown" >
             <a class="nav-link dropdown-toggle" style="cursor: pointer;" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Categories
             </a>
@@ -17,13 +16,16 @@
               <a class="dropdown-item" (click)="onCategoryClicked('Sport')">Sport</a>
             </div>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="modal" data-target="#ModalStatistics">Statistic</a>
+          </li>
       </ul>
       <form class="form-inline">
         <button class="btn btn-outline-info" data-toggle="modal" data-target="#Modal" type="button">Add article</button>
       </form>
     </div>
   </nav>
-  <!-- Modal -->
+  <!-- Modal AddArticle -->
   <div class="modal fade " id="Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
       <div class="modal-content">
@@ -34,20 +36,38 @@
           </button>
         </div>
         <div class="modal-body">
-            <form>
+            <form [formGroup]="addArticleForm" (ngSubmit)="addArticle()">
                 <div class="form-group">
                   <label for="validationDefault01" class="col-form-label">Title:</label>
-                  <input type="text" class="form-control" id="recipient-name" required>
+                  <input type="text" class="form-control" id="title" formControlName="title" required>
                 </div>
                 <div class="form-group">
                   <label for="message-text" class="col-form-label">Body:</label>
-                  <textarea class="form-control large" id="message-text" required></textarea>
+                  <textarea class="form-control large" id="body" formControlName="body" style="height: 300px;" required></textarea>
                 </div>
-                <button type="button" class="btn btn-dark center" type="submit">Add Article</button>
+                <button type="button" class="btn btn-info center" type="submit" >Add Article</button>
                 
             </form>
         </div>
         
       </div>
     </div>
-  </div>
+    </div>
+    <!-- Modal Statistics -->
+    <div class="modal fade " id="ModalStatistics" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle2" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalCenterTitle2">Statistics</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <app-statistics></app-statistics>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
