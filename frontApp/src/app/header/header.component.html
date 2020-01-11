@@ -1,10 +1,9 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="#">Clasificator Stiri</a>
-    
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item dropdown" >
-            <a class="nav-link dropdown-toggle" href="#" style="cursor: pointer;" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" style="cursor: pointer;" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Categories
             </a>
             <div class="dropdown-menu"  aria-labelledby="navbarDropdownMenuLink">
@@ -18,7 +17,7 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Statistic</a>
+            <a class="nav-link" data-toggle="modal" data-target="#ModalStatistics">Statistic</a>
           </li>
       </ul>
       <form class="form-inline">
@@ -26,7 +25,7 @@
       </form>
     </div>
   </nav>
-  <!-- Modal -->
+  <!-- Modal AddArticle -->
   <div class="modal fade " id="Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
       <div class="modal-content">
@@ -46,11 +45,29 @@
                   <label for="message-text" class="col-form-label">Body:</label>
                   <textarea class="form-control large" id="body" formControlName="body" style="height: 300px;" required></textarea>
                 </div>
-                <button type="button" class="btn btn-dark center" type="submit" >Add Article</button>
+                <button type="button" class="btn btn-info center" type="submit" >Add Article</button>
                 
             </form>
         </div>
         
       </div>
     </div>
-  </div>
+    </div>
+    <!-- Modal Statistics -->
+    <div class="modal fade " id="ModalStatistics" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle2" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalCenterTitle2">Statistics</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <app-statistics></app-statistics>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+

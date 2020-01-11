@@ -9,6 +9,13 @@ import { Article } from 'src/app/shared/article.model';
 export class ArticleComponent implements OnInit {
 
   @Input() article:Article;
+  open:boolean=false;
+
+  toggleOpen(){
+    this.open=!this.open;
+  }
+
+
   constructor() { }
 
   ngOnInit() {

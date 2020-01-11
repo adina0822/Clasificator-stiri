@@ -11,9 +11,9 @@ import { Article } from '../shared/article.model';
 export class HeaderComponent implements OnInit {
   addArticleForm = new FormGroup({
     title: new FormControl('', [
-      Validators.required,Validators.minLength(4)]),
+      Validators.required]),
     body: new FormControl('',[
-      Validators.required,Validators.minLength(4)]),
+      Validators.required]),
   });
   constructor(private articleService:ArticleService) { }
 
@@ -30,6 +30,8 @@ export class HeaderComponent implements OnInit {
     console.log(this.addArticleForm.value);
     this.articleService.addArticle(new Article(this.addArticleForm.value.title,this.addArticleForm.value.body))
     this.articleService.listChanged.emit(this.articleService.getArtciles());
+    this.addArticleForm.setValue({title:'',body:''})
+
 
   }
 

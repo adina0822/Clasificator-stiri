@@ -9,6 +9,7 @@ import { HeaderComponent } from './header/header.component';
 import { ArticleComponent } from './article-list/article/article.component';
 import { ArticleService } from './shared/article.service';
 import { DropdownDirective } from './shared/dropdown.directive';
+import { StatisticsComponent } from './statistics/statistics.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { DropdownDirective } from './shared/dropdown.directive';
     ArticleListComponent,
     HeaderComponent,
     ArticleComponent,
-    DropdownDirective
+    DropdownDirective,
+    StatisticsComponent
   ],
   imports: [
     BrowserModule,
