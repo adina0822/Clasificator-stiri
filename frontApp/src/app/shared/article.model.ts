@@ -1,11 +1,3 @@
 export class Article {
-    id: number;
-    title: string;
-    body: string;
-    categories: string[];
-
-    constructor(t:string,b:string) {
-        this.title=t;
-        this.body=b;
-    }
+    constructor(public id?:number,public title?:string,public body?:string, public category?:string) { }
 }

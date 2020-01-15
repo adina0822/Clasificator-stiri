@@ -22,7 +22,7 @@ export class ArticleListComponent implements OnInit {
   constructor(private articleService: ArticleService) { }
 
   ngOnInit() {
-      this.articleList=this.articleService.getArtciles();
+      this.articleList=this.articleService.getArticles();
       this.selectedCategory=this.articleService.selectedCategory;
       this.articleService.listChanged.subscribe(
         (articles:Article[]) => {this.articleList=articles}

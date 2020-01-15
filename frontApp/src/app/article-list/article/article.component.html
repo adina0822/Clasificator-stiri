@@ -2,7 +2,7 @@
     <div class="card-body d-flex flex-column">
         <h5 class="card-title">{{article.title}}</h5>
         <p class="card-text">{{article.body.slice(0,200) + "..."}}</p>
-        <p class="card-text"><small class="text-muted">{{article.categories}}</small></p>
+        <p class="card-text"><small class="text-muted">{{article.category}}</small></p>
         <a class="btn btn-info mt-auto" style="width: 120px; color:white;" (click)="toggleOpen()">Show more</a>
     </div>
 </div>
@@ -11,7 +11,7 @@
     <div class="card-body d-flex flex-column">
         <h5 class="card-title">{{article.title}}</h5>
         <p class="card-text">{{article.body}}</p>
-        <p class="card-text"><small class="text-muted">{{article.categories}}</small></p>
+        <p class="card-text"><small class="text-muted">{{article.category}}</small></p>
         <a class="btn btn-info mt-auto" style="width: 120px; color:white;" (click)="toggleOpen()">Show less</a>
     </div>
 </div>

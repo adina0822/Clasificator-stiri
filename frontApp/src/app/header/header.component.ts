@@ -14,6 +14,8 @@ export class HeaderComponent implements OnInit {
       Validators.required]),
     body: new FormControl('',[
       Validators.required]),
+    rep: new FormControl(),
+    model: new FormControl()
   });
   constructor(private articleService:ArticleService) { }
 
@@ -22,15 +24,16 @@ export class HeaderComponent implements OnInit {
 
   onCategoryClicked(category:string){
     this.articleService.setCategory(category);
-    this.articleService.listChanged.emit(this.articleService.getArtciles());
+    this.articleService.listChanged.emit(this.articleService.getArticles());
     this.articleService.categoryChanged.emit(this.articleService.selectedCategory);
   }
 
   addArticle(form: NgForm){
     console.log(this.addArticleForm.value);
-    this.articleService.addArticle(new Article(this.addArticleForm.value.title,this.addArticleForm.value.body))
-    this.articleService.listChanged.emit(this.articleService.getArtciles());
-    this.addArticleForm.setValue({title:'',body:''})
+    this.articleService.addArticle(form)
+      .subscribe((data) => {})
+    this.articleService.listChanged.emit(this.articleService.getArticles());
+    this.addArticleForm.setValue({title:'',body:'',rep:"",model:""})
 
 
   }
